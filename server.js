@@ -1,92 +1,59 @@
-/*** Express setup & start ***/
+// Importeer het npm package Express (uit de door npm aangemaakte node_modules map)
+// Deze package is geïnstalleerd via `npm install`, en staat als 'dependency' in package.json
+import express from 'express'
 
-// Importeer het npm pakket express uit de node_modules map
-import express, { application, json } from 'express'
+// Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
+import { Liquid } from 'liquidjs';
 
-// Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
-import fetchJson from './helpers/fetch-json.js'
 
-// Maak een nieuwe express app aan
+console.log('Hieronder moet je waarschijnlijk nog wat veranderen')
+// Doe een fetch naar de data die je nodig hebt
+// const apiResponse = await fetch('...')
+
+// Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
+// const apiResponseJSON = await apiResponse.json()
+
+// Controleer eventueel de data in je console
+// (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
+// console.log(apiResponseJSON)
+
+
+// Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
 
-// Stel ejs in als template engine
-app.set('view engine', 'ejs')
-
-// Stel de map met ejs templates in
-app.set('views', './views')
-
-// Gebruik de map 'public' voor statische resources, zoals stylesheets, afbeeldingen en client-side JavaScript
+// Gebruik de map 'public' voor statische bestanden (resources zoals CSS, JavaScript, afbeeldingen en fonts)
+// Bestanden in deze map kunnen dus door de browser gebruikt worden
 app.use(express.static('public'))
 
-app.use(express.urlencoded({extended: true }))
+// Stel Liquid in als 'view engine'
+const engine = new Liquid();
+app.engine('liquid', engine.express()); 
 
-// Stel het oba profile in
-const apiData = 'https://fdnd-agency.directus.app/oba_profile'
+// Stel de map met Liquid templates in
+// Let op: de browser kan deze bestanden niet rechtstreeks laden (zoals voorheen met HTML bestanden)
+app.set('views', './views')
 
-// Stel het oba profile in
-const apiFamily = 'https://fdnd-agency.directus.app/oba_family'
-
-// Stel het basis endpoint in
-const apiUrl = 'https://fdnd-agency.directus.app/items/'
-
-const apiItem = (apiUrl + 'oba_item')
-
-// dit is de home page & family
-
-app.get('/', function(request, response) {
-    fetchJson(apiItem).then((items) => { console.log(items.data)
-        response.render('index', {
-           
-            items: items.data/*hier zeg ik dat iedereen getoond moet worden*/
-        });
-    })
-    console.log(apiItem) 
+// Maak een GET route voor de index (meestal doe je dit in de root, als /)
+app.get('/', async function (request, response) {
+   // Render index.liquid uit de Views map
+   // Geef hier eventueel data aan mee
+   response.render('index.liquid')
 })
 
-// dit is de overview
-
-app.get('/overview', function(request, response) {
-    fetchJson(apiItem).then((items) => { console.log(items.data)
-        response.render('overview', {
-           
-            items: items.data/*hier zeg ik dat iedereen getoond moet worden*/
-        });
-    })
-    console.log(apiItem) 
+// Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
+// Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
+app.post('/', async function (request, response) {
+  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
+  // Er is nog geen afhandeling van een POST, dus stuur de bezoeker terug naar /
+  response.redirect(303, '/')
 })
 
-app.get('/detail/:id', function(request, response) {
-    fetchJson(apiItem + '?filter={"id":' + request.params.id + '}').then((items) => { console.log(items.data)
-        response.render('detail', {
-
-            items: items.data/*hier zeg ik dat iedereen getoond moet worden*/
-        });
-    })
-  
-})
-
-
-
-// // Maak een GET route voor de index
-// app.get('/', function (request, response) {
-//     // Haal alle personen uit de WHOIS API op
-  
-//     //Hier heb ik een filter gemaakt met nickname door nempty true te gebruiken worden ook de nicknames die ze hebben zichtbaar
-//     fetchJson('https://fdnd-agency.directus.app/items/'
-//     ).then((items) => {
-//       // apiData bevat gegevens van alle personen uit alle squads
-//       // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
-  
-//       // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
-//       response.render('index', {items: items.data })
-//     })
-//   })
-
-  // Stel het poortnummer in waar express op moet gaan luisteren
+// Stel het poortnummer in waar Express op moet gaan luisteren
+// Lokaal is dit poort 8000, als dit ergens gehost wordt, is het waarschijnlijk poort 80
 app.set('port', process.env.PORT || 8000)
 
-// Start express op, haal daarbij het zojuist ingestelde poortnummer op
+// Start Express op, haal daarbij het zojuist ingestelde poortnummer op
 app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
-});
+})
