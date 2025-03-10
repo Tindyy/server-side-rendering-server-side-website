@@ -54,16 +54,21 @@ app.get('/', async function (request, response){
 })
 
 // GET
-app.get('/:id/art_object_detail', (req, res)=> {
-  console.log(req.params.id)
-  res.send('')
+app.get('/art/:id/', async function (request, response){
+//data laden uit directus
+  
+  response.render('artObjectDetail.liquid', {
+    art: request.params.id
+
+  });
+
 })
 
 //POST
-app.post('/:id/art_object_detail', (req, res)=> {
-  console.log(req.params.id)
-  res.send('')
-})
+// app.post('/:id/art_object_detail', (req, res)=> {
+//   console.log(req.params.id)
+//   res.send('')
+// })
 
 
 
