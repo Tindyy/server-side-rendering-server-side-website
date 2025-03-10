@@ -1,0 +1,26 @@
+
+
+.animation-container {
+    display: block; 
+    background-color: var(--color-yellow);
+    border-bottom: var(--border);
+    padding: .2em;
+    width: 100vw;
+  }
+
+
+  .error-code{
+
+    transform: translateX(100%); 
+  
+    animation: move 30s linear infinite ;
+  }
+
+  @keyframes move {
+    to { transform: translateX(-100%); }
+  }
+
+  h1{
+    font-size: var(--h1-font-size);
+    font-weight: var(--h1-font-weight);
+}
