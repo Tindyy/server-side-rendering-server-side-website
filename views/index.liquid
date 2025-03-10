@@ -1,4 +1,19 @@
 {% render 'partials/head.liquid' %}
 
+<main>
+    <ul>
+        {% for art_object in art_objects %}
+        <li>
+            <article class="object">
+                <a href="/{{art_object.id}}/art_object_detail">
+                    <img src="https://fdnd-agency.directus.app/assets/{{ art_object.image }}" alt="">
+                    <h6> {{art_object.title}} </h6>
+                </a>
+            </article>
+        </li>
+        {% endfor %}
+    </ul>
+</main>
 
-{% render 'partials/footer.liquid' %}
+
+{% render 'partials/foot.liquid' %}

@@ -34,11 +34,40 @@ app.engine('liquid', engine.express());
 app.set('views', './views')
 
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
-app.get('/', async function (request, response) {
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
-   response.render('index.liquid')
+
+
+//get all the data from the api
+
+app.get('/', async function (request, response){
+  const apiResponse = await fetch ('https://fdnd-agency.directus.app/items/fabrique_art_objects') 
+  const apiResponseJSON = await apiResponse.json()
+
+  const titleResponse = await fetch ('https://fdnd-agency.directus.app/items/fabrique_art_objects/?fields=title')
+  const titleResponseJSON = await titleResponse.json()
+
+  response.render('index.liquid', {
+    art_objects: apiResponseJSON.data,
+    titles: titleResponseJSON.data
+  });
+
+
 })
+
+// GET
+app.get('/:id/art_object_detail', (req, res)=> {
+  console.log(req.params.id)
+  res.send('')
+})
+
+//POST
+app.post('/:id/art_object_detail', (req, res)=> {
+  console.log(req.params.id)
+  res.send('')
+})
+
+
+
+
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
