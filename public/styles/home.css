@@ -37,13 +37,14 @@
     }
    
    @media (min-width: 1480px) {
-      width: 18vw;
+      width: 16vw;
    
     }
 }
 
 .object{
     border: var(--border);
+    display: inline-block;
     width: auto;
     height: auto;
     padding: .5em;
@@ -56,6 +57,21 @@
 .object:hover p{
     display: block;
     text-decoration: underline;
-    transition: ease-in 10ms;
+    width: 40vw;
+
+    @media (min-width: 530px) {
+        width: 27vw;
+
+    }
+   
+   @media (min-width: 800px) {
+      width: 27vw;
+   
+    }
+   
+   @media (min-width: 1480px) {
+      width: 16vw;
+   
+    }
 
 }
