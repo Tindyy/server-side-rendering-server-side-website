@@ -60,6 +60,12 @@
    --p-line-height: 1.5em;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @media (min-width: 530px) {
 
  }
@@ -131,4 +137,9 @@ p{
     background-color: var(--color-black);
     color: var(--color-white);
     border: var(--color-white);
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-black);
 }

@@ -1,0 +1,45 @@
+.object-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 0;
+
+   @media (min-width: 530px) {
+    grid-template-columns: repeat(3,1fr);
+    }
+   
+   @media (min-width: 800px) {
+    grid-template-columns: repeat(4,1fr);
+    }
+   
+   @media (min-width: 1480px) {
+    grid-template-columns: repeat(5,1fr);
+    }
+}
+ 
+ 
+ 
+ 
+ ul li{
+    list-style: none;
+}
+
+
+.object img{
+    width: 40vw;
+    border-radius: 6.5%;
+
+    @media (min-width: 530px) {
+        width: 30vw;
+
+    }
+   
+   @media (min-width: 800px) {
+      width: 23vw;
+   
+    }
+   
+   @media (min-width: 1480px) {
+      width: 18vw;
+   
+    }
+}
