@@ -118,3 +118,17 @@ p{
     font-weight: var(--p-font-weight);
     line-height: var(--p-line-height);
 }
+
+.button{
+    text-decoration: none;
+    color: var(--color-black);
+    background-color: var(--color-yellow);
+    border: var(--border);
+    padding: 1em;
+}
+
+.button:hover{
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: var(--color-white);
+}

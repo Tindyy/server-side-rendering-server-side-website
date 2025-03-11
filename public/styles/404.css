@@ -1,4 +1,6 @@
-
+.nav{
+    display: none;
+}
 
 .animation-container {
     display: block; 
