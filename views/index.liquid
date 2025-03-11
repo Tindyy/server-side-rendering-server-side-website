@@ -17,4 +17,18 @@
 </main>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () { // add event
+      const container = document.querySelector(".object-container"); //select
+  
+      function duplicateItems() { // interaction
+        const items = container.innerHTML; 
+        container.innerHTML += items;
+      }
+  
+      duplicateItems(); 
+      setInterval(duplicateItems, 5000); 
+    });
+  </script>
+
 {% render 'partials/foot.liquid' %}
