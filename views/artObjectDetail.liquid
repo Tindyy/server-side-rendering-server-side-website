@@ -3,14 +3,28 @@
 
 <main>
 <div class="detail-page-grid-container">
-
+<!--add if statements to fill empty-->
     <section class="object-image">
-        <img src="https://fdnd-agency.directus.app/assets/{{ art_object.image }}" alt="">
+        {% if art.image %}
+        <img src="https://fdnd-agency.directus.app/assets/{{ art.image }}" alt="">
+        {% else %}
+        <h2>Sorry Image not found</h2>
+        {% endif %}
     </section>
 
     <section class="object-title-container">
-            <h1 class="object-title">Title</h1>
-            <h3 class="object-museum"><a href="">Qatar Museum</a></h3> <!--replace with {{object.museum}}-->
+            {% if art.title %}
+            <h1 class="object-title"> {{art.title}} </h1>
+            {% else %}
+            <h1 class="object-title"> Unknown title </h1>
+            {% endif %}
+
+
+            {% if art.museum %}
+            <h3 class="object-museum"><a href="">{{art.museum}}</a></h3> <!--replace with {{object.museum}}-->
+            {% else %}
+            <h3 class="object-museum"><a href="">Unknown Museum</a></h3>
+            {% endif %}
     </section>
 
     <section class="description-container">
@@ -21,6 +35,7 @@
                et quia minus non consequuntur enim qui unde delectus eos excepturi omnis. Est voluptatibus sapiente eum unde eveniet est magni earum. Ad reprehenderit fuga et ratione quia est nisi earum et animi obcaecati est obcaecati nostrum?
            </p> <!--replace with {{object.description}}-->
     </section>
+    
 
     <section class="object-detail-table-container">
             <h3 class="display-location">On Display at Mathaf</h3>

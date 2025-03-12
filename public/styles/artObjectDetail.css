@@ -16,9 +16,17 @@
 }
 
 .object-image { 
+    display: flex;
+    justify-content: center; 
     @media (min-width: 800px) {
         grid-area: object-image;  
    }
+}
+
+.object-image img{
+    display: block;
+    padding: .5em;
+    width: 20vw;
 }
 
 .object-title-container {

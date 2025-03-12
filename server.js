@@ -55,11 +55,14 @@ app.get('/', async function (request, response){
 
 // GET
 app.get('/art/:id/', async function (request, response){
-//data laden uit directus
-  
-  response.render('artObjectDetail.liquid', {
-    art: request.params.id
 
+  const artId = request.params.id;
+
+  const apiResponse = await fetch(`https://fdnd-agency.directus.app/items/fabrique_art_objects/${artId}`);
+  const apiResponseJSON = await apiResponse.json();
+
+  response.render('artObjectDetail.liquid', {
+    art: apiResponseJSON.data  
   });
 
 })
