@@ -139,7 +139,18 @@ p{
     border: var(--color-white);
 }
 
+.button:active{
+    color: var(--color-black);
+    color: var(--transparency-button);
+    background-color: var(--color-yellow);
+    border: var(--border);
+}
+
 a{
     text-decoration: none;
     color: var(--color-black);
+}
+
+main{
+    padding: .75em;
 }

@@ -14,9 +14,37 @@
         </li>
         {% endfor %}
     </ul>
+
+    <section>
+        <ul>
+            <li class="filter-button">
+                <button></button>
+            </li>
+            <li class="filter-button">
+                <button>All objects</button>
+            </li>
+            <li class="filter-button">
+                <button>Pottery</button>
+            </li>
+            <li class="filter-button">
+                <button> Islamic art</button>
+            </li>
+            <li class="filter-button">
+                <button> Tapestry</button>
+            </li>
+            <li class="filter-button">
+                <button>Glass</button>
+            </li>
+        </ul>
+
+        <form role="search" action="" class="search-bar" >
+            <label for="search"></label>
+            <input type="search" name="search" placeholder="type to search" aria-placeholder="type to search">
+        </form>
+    </section>
 </main>
 
-
+<!--
 <script>
     document.addEventListener("DOMContentLoaded", function () { // add event
       const container = document.querySelector(".object-container"); //select
@@ -30,5 +58,5 @@
       setInterval(duplicateItems, 5000); 
     });
   </script>
-
+-->
 {% render 'partials/foot.liquid' %}

@@ -3,19 +3,29 @@
 }
 
 .animation-container {
-    display: block; 
     background-color: var(--color-yellow);
     border-bottom: var(--border);
     padding: .2em;
     width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
   }
 
 
   .error-code{
-
+    margin-left: 3em;
     transform: translateX(100%); 
   
-    animation: move 30s linear infinite ;
+    animation: move 25s linear infinite ;
   }
 
   @keyframes move {
