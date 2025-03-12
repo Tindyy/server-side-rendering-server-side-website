@@ -1,0 +1,23 @@
+.object-title{
+    border-bottom: var(--border);
+    padding-bottom: .25em;
+}
+
+.object-museum{
+    border-bottom: var(--border);
+}
+
+.object-detail-table-container{
+    border-bottom: var(--border);
+}
+
+.object-detail-containers{
+    border-bottom: var(--border);
+}
+
+.display-location{
+    border: var(--border);
+    padding: .5em;
+    display: inline-block;
+    font-size: var(--p-font-size);
+}
