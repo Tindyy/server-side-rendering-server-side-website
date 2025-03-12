@@ -24,11 +24,11 @@
 
 
 .object img{
-    width: 40vw;
+    width: 35vw;
     /*border-radius: 6.5%;*/
 
     @media (min-width: 530px) {
-        width: 27vw;
+        width: 24vw;
 
     }
    
@@ -58,10 +58,10 @@
 .object:hover p{
     display: block;
     text-decoration: underline;
-    width: 40vw;
+    width: 35vw;
 
     @media (min-width: 530px) {
-        width: 27vw;
+        width: 24vw;
 
     }
    
