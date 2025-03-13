@@ -9,6 +9,7 @@
 .nav {
     border-bottom: var(--border);
     background-color: var(--color-white);
+
     @media (min-width: 800px) {
         display: flex;
         justify-content: space-between;
@@ -38,4 +39,8 @@ nav ul li a{
     color: var(--color-black);
     padding: 1.5em;
 
+}
+
+.nav ul li a:hover{
+    text-decoration: underline;
 }

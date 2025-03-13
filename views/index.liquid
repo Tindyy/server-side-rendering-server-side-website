@@ -1,7 +1,11 @@
 {% render 'partials/head.liquid' %}
 <link rel="stylesheet" href="/styles/home.css">
 
-<main>
+<main class="gallery-main">
+    <section class="gallery-title">
+        <h1>Welcome to the Gallery</h1>
+    </section>
+
     <ul class="object-container">
         {% for art_object in art_objects %}
         <li>
@@ -15,11 +19,8 @@
         {% endfor %}
     </ul>
 
-    <section>
-        <ul>
-            <li class="filter-button">
-                <button></button>
-            </li>
+    <section class="filter-and-search-container">
+        <ul class="filter-container">
             <li class="filter-button">
                 <button>All objects</button>
             </li>
@@ -39,7 +40,7 @@
 
         <form role="search" action="" class="search-bar" >
             <label for="search"></label>
-            <input type="search" name="search" placeholder="type to search" aria-placeholder="type to search">
+            <input class="search-input" type="search" name="search" placeholder="look through the art" aria-placeholder="type to search">
         </form>
     </section>
 </main>
