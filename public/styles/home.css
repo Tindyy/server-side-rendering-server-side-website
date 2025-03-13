@@ -1,99 +1,11 @@
-/*.gallery-main{
-    background-color: black;
-}*/
-/*
-.gallery-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-bottom: var(--border);
-    margin: 0;
-}
 
-.object-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: .15em;
-    animation: scrollLoop 10s linear infinite;
-
-   @media (min-width: 530px) {
-    grid-template-columns: repeat(3,1fr);
-    }
-   
-   @media (min-width: 800px) {
-    grid-template-columns: repeat(3,1fr);
-    }
-   
-   @media (min-width: 1480px) {
-    grid-template-columns: repeat(5,1fr);
-    }
-}
- 
- 
- ul li{
-    list-style: none;
-}
-
-
-.object img{
-    width: 35vw;
-    /*border-radius: 6.5%;
-
-    @media (min-width: 530px) {
-        width: 26vw;
-
-    }
-   
-   @media (min-width: 800px) {
-      width: 29vw;
-   
-    }
-   
-   @media (min-width: 1480px) {
-      width: 17vw;
-   
-    }
-}
-
-.object{
-    border: var(--border);
-    display: inline-block;
-    width: auto;
-    height: auto;
-    padding: .5em;
-}
-
-
-.object p{
-    display: none;
-}
-
-.object:hover p{
-    display: block;
-    text-decoration: underline;
-    width: 35vw;
-
-    @media (min-width: 530px) {
-        width: 24vw;
-
-    }
-   
-   @media (min-width: 800px) {
-      width: 27vw;
-   
-    }
-   
-   @media (min-width: 1480px) {
-      width: 16vw;
-   
-    }
-
-}
-
-*/
 .gallery-main{
     background-color: var(--color-white);
 
+}
+
+.home-page:active{
+    display: none;
 }
 
 .all-objects{
@@ -102,6 +14,14 @@
     overflow: scroll;
     z-index: 0;
     border: var(--border);
+    transition: all 0.5s ease-in-out;
+}
+
+.all-objects:active{
+    overflow: none;
+    border: none;
+    width: 95vw;
+    height: 100vh;
 }
 
 ::-webkit-scrollbar {
@@ -111,16 +31,32 @@
 .fullscreen, .smallscreen{
     position: sticky;
     bottom: 0;
+    background-color: var(--color-yellow);
+    transition: background-color 0.3s ease; 
+
+}
+
+.fullscreen:hover, .smallscreen:hover {
     background-color: transparent;
     border: none;
     backdrop-filter: blur(10.2px);
     -webkit-backdrop-filter: blur(10.2px);
 }
 
-.small-screen{
+.smallscreen{
     display: none;
 }
 
+.smallscreen:active{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+
+.fullscreen:active{
+    display: none;
+}
 
 .object-container{
     display: grid;
