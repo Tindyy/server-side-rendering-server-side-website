@@ -2,19 +2,26 @@
 .gallery-main{
     background-color: var(--color-white);
 
+    @media (min-width: 800px) {
+        width: 95vw;
+        margin: 1.25em;
+    }
 }
 
-.home-page:active{
-    display: none;
-}
+/**/
 
 .all-objects{
     position: relative;
-    height: 30vw;
+    height: 60vw;
     overflow: scroll;
-    z-index: 0;
+    z-index: 2;
     border: var(--border);
     transition: all 0.5s ease-in-out;
+    background-color: var(--color-dark-grey);
+
+    @media (min-width: 800px) {
+        height: 25vw;
+    }
 }
 
 .all-objects:active{
@@ -28,12 +35,19 @@
     display: none;
 }
 
-.fullscreen, .smallscreen{
+.fullscreen, .smallscreen {
     position: sticky;
     bottom: 0;
     background-color: var(--color-yellow);
     transition: background-color 0.3s ease; 
+    width: 4em;
+    height: 4em;
 
+}
+
+.fullscreen img,  .smallscreen img{
+    width: 2.7em;
+    height: 2.7em;
 }
 
 .fullscreen:hover, .smallscreen:hover {
@@ -58,11 +72,14 @@
     display: none;
 }
 
+/*object container*/
+
 .object-container{
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: .15em;
     animation: scrollLoop 10s linear infinite;
+    padding: .75em;
 
    @media (min-width: 530px) {
     grid-template-columns: repeat(3,1fr);
@@ -108,6 +125,7 @@
 .object p{
     display: none;
 }
+/*filter and search section*/
 
 .filter-and-search-container{
     visibility: hidden
@@ -136,6 +154,11 @@
 .filter-and-search-container{
     display: none;
 
+}
+
+.filter-and-search-container:active{
+    display: block;
+
     @media (min-width: 800px) {
     position: fixed;
     bottom: 0;
@@ -157,3 +180,120 @@
     font-size: var(--h4-font-size);
     border: var(--border-white);
 }
+
+/*rest of the homepage*/
+.home-page:active{
+    display: none;
+}
+
+.visit{
+    position: relative;
+    display: inline-block;
+    padding: .5em;
+    border: var(--border);
+    background-color: var(--color-white);
+    z-index: 5;
+    left: 30%;
+    transform: translateX(-50%) translateY(-30%);
+    width: 30vw;
+
+    @media (min-width: 530px) {
+        left: 50%;
+    }
+   
+}
+
+.qatar-museum a{
+    text-decoration: none;
+}
+
+.qatar-museum a:hover{
+    text-decoration: underline;
+}
+
+.visit p{
+    border-top: var(--border);
+    padding: .25em;
+}
+
+.welcome{
+    border-top: var(--border);
+    border-bottom: var(--border);
+}
+/*museum container*/
+
+.musuems-container ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+
+    @media (min-width: 530px) {
+        display: flex; 
+        list-style: none;
+        justify-content: center; 
+        flex-direction: row;
+    }
+}
+
+.musuems-container li {
+    flex: 1; 
+}
+
+.museum{
+    border: var(--border);
+    padding: .5em;
+    display: inline-block;
+
+    background-color: var(--color-white);
+}
+
+.museum img{
+    width: 65vw;
+
+    @media (min-width: 530px) {
+        width: 17vw;
+    }
+}
+
+.museum img:hover{
+    width: 65vw;
+
+    @media (min-width: 530px) {
+        width: 25vw;
+    }
+}
+
+.museum h2{
+    width: 65vw;
+
+    @media (min-width: 530px) {
+        width: 17vw;
+    }
+}
+
+.museum h2:hover{
+    width: 65vw;
+
+    @media (min-width: 530px) {
+        width: 25vw;
+    }
+}
+
+.nmq{
+    z-index: 0;
+    
+}
+
+.mia{
+    z-index: 1;
+}
+
+.mathaf{
+    z-index: 2;
+}
+
+.olympic{
+    z-index: 3;
+}
+
+
