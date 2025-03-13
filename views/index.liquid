@@ -2,24 +2,33 @@
 <link rel="stylesheet" href="/styles/home.css">
 
 <main class="gallery-main">
+    <!--
     <section class="gallery-title">
         <h1>Welcome to the Gallery</h1>
     </section>
+    -->
+    <section class="all-objects">
+        <ul class="object-container">
+            {% for art_object in art_objects %}
+            <li>
+                <article class="object">
+                    <a href="/art/{{art_object.id}}">
+                        <img src="https://fdnd-agency.directus.app/assets/{{ art_object.image }}" alt="">
+                        <p> {{art_object.title}} <p>
+                    </a>
+                </article>
+            </li>
+            {% endfor %}
+        </ul>
+        <button class="fullscreen fullscreen-inactive"><img src="/assets/icons/screensize/expand.png" alt=""></button>
+        <button class="smallscreen fullscreen-active"><img src="/assets/icons/screensize/arrows.png" alt=""></button>
+    </section>
 
-    <ul class="object-container">
-        {% for art_object in art_objects %}
-        <li>
-            <article class="object">
-                <a href="/art/{{art_object.id}}">
-                    <img src="https://fdnd-agency.directus.app/assets/{{ art_object.image }}" alt="">
-                    <p> {{art_object.title}} <p>
-                </a>
-            </article>
-        </li>
-        {% endfor %}
-    </ul>
+    <section class="qatar-museum">
+        <a href=""><h3>Visit Qatar Museum</h3></a>
+    </section>
 
-    <section class="filter-and-search-container">
+    <section class="filter-and-search-container fullscreen-active">
         <ul class="filter-container">
             <li class="filter-button">
                 <button>All objects</button>
@@ -44,7 +53,7 @@
         </form>
     </section>
 </main>
-
+<script src="/script/qatarmuseum.js"></script>
 <!--
 <script>
     document.addEventListener("DOMContentLoaded", function () { // add event
@@ -60,4 +69,8 @@
     });
   </script>
 -->
+
+<script>
+    
+</script>
 {% render 'partials/foot.liquid' %}

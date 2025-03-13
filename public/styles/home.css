@@ -1,7 +1,7 @@
 /*.gallery-main{
     background-color: black;
 }*/
-
+/*
 .gallery-title{
     display: flex;
     justify-content: center;
@@ -37,7 +37,7 @@
 
 .object img{
     width: 35vw;
-    /*border-radius: 6.5%;*/
+    /*border-radius: 6.5%;
 
     @media (min-width: 530px) {
         width: 26vw;
@@ -90,6 +90,93 @@
 
 }
 
+*/
+.gallery-main{
+    background-color: var(--color-white);
+
+}
+
+.all-objects{
+    position: relative;
+    height: 30vw;
+    overflow: scroll;
+    z-index: 0;
+    border: var(--border);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.fullscreen, .smallscreen{
+    position: sticky;
+    bottom: 0;
+    background-color: transparent;
+    border: none;
+    backdrop-filter: blur(10.2px);
+    -webkit-backdrop-filter: blur(10.2px);
+}
+
+.small-screen{
+    display: none;
+}
+
+
+.object-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: .15em;
+    animation: scrollLoop 10s linear infinite;
+
+   @media (min-width: 530px) {
+    grid-template-columns: repeat(3,1fr);
+    }
+   
+   @media (min-width: 800px) {
+    grid-template-columns: repeat(3,1fr);
+    }
+   
+   @media (min-width: 1480px) {
+    grid-template-columns: repeat(4,1fr);
+    }
+}
+ 
+ 
+ ul li{
+    list-style: none;
+}
+
+
+.object img{
+
+    width: 35vw;
+    box-shadow: var(--black);
+    
+
+    @media (min-width: 530px) {
+        width: 26vw;
+
+    }
+   
+   @media (min-width: 800px) {
+      width: 29vw;
+   
+    }
+   
+   @media (min-width: 1480px) {
+      width: 23vw;
+   
+    }
+}
+
+.object p{
+    display: none;
+}
+
+.filter-and-search-container{
+    visibility: hidden
+}
+
 .filter-container{
     display: flex;
     align-items: center;
@@ -98,8 +185,8 @@
 .filter-button button{
     background-color: var(--color-black);
     color: var(--color-white);
+    border: var(--border-white);
     padding: .75em;
-    margin: 1.35em;
     font-size: var(--h6-font-size);
 }
 
@@ -112,6 +199,7 @@
 
 .filter-and-search-container{
     display: none;
+
     @media (min-width: 800px) {
     position: fixed;
     bottom: 0;
