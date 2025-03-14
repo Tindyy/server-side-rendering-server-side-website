@@ -7,13 +7,11 @@ fullscreenBtn.addEventListener('onClick', () => {
     fullscreenBtn.classList.add('active');
     smallscreenBtn.classList.add('active');
     allObjects.classList.add('active');
-    homepage.classList.add('active');
 });
 
 smallscreenBtn.addEventListener('click', () => {
     fullscreenBtn.classList.remove('active');
     smallscreenBtn.classList.remove('active');
     allObjects.classList.remove('active');
-    homepage.classList.remove('active');
 });
 

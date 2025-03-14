@@ -183,7 +183,7 @@
 
 /*rest of the homepage*/
 .home-page:active{
-    display: none;
+    display: block;
 }
 
 .visit{
@@ -220,7 +220,7 @@
     border-top: var(--border);
     border-bottom: var(--border);
 }
-/*museum container*/
+/*museum container styling*/
 
 .musuems-container ul {
     display: flex;
@@ -246,6 +246,7 @@
     padding: .5em;
     display: inline-block;
     transition: transform 0.3s ease-in-out;
+    width: 100%;
 
     background-color: var(--color-white);
     @media (min-width: 530px) {
@@ -272,47 +273,30 @@
     }
 }
 
-.nmq{
-    z-index: 0;
-    transform: translateX(0%);
-    
+/*museum container animation*/
+/* Calculate positions dynamically */
+.museum:nth-child(n) {
+    z-index: calc(5 - var(--index));
+    transform: translateX(calc(-10% * var(--index)));
 }
 
-.nmq:hover{
-    transform: translateX(-5%);
-    
+/* Hover effect: move slightly left */
+.museum:nth-child(n):hover {
+    transform: translateX(calc(-15% * var(--index) - 5%));
+    text-decoration: underline;
+
 }
 
-.mia{
-    z-index: 2;
-    transform: translateX(-10%);
-}
-
-.mia:hover{
-    transform: translateX(-15%);
-}
-
-.mathaf{
-    z-index: 3;
-    transform: translateX(-20%);
-}
-
-.mathaf:hover{
-    transform: translateX(-25%);
+.museum:nth-child(n):active {
+    z-index: calc(5 - var(--index));
+    transform: translateX(calc(-10% * var(--index)));
+    width: 100%;
 }
 
 
-.olympic{
-    z-index: 4;
-    transform: translateX(-30%);
-}
-
-.olympic:hover{
-    transform: translateX(-35%);
-}
-
-.see-more{
-    z-index: 8;
-    transform: translateX(-40%);
-}
-
+/* Assign index values using CSS variables */
+.museum:nth-child(1) { --index: 0; }
+.museum:nth-child(2) { --index: 1; }
+.museum:nth-child(3) { --index: 2; }
+.museum:nth-child(4) { --index: 3; }
+.museum:nth-child(5) { --index: 4; } 
