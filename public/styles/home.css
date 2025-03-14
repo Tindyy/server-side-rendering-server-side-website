@@ -226,6 +226,7 @@
     display: flex;
     list-style: none;
     flex-direction: column;
+    position: relative;
 
     @media (min-width: 530px) {
         display: flex; 
@@ -237,63 +238,81 @@
 
 .musuems-container li {
     flex: 1; 
+    position: relative;
 }
 
 .museum{
     border: var(--border);
     padding: .5em;
     display: inline-block;
+    transition: transform 0.3s ease-in-out;
 
     background-color: var(--color-white);
+    @media (min-width: 530px) {
+        
+    }
 }
 
 .museum img{
     width: 65vw;
+    display: block;
 
     @media (min-width: 530px) {
         width: 17vw;
     }
 }
 
-.museum img:hover{
-    width: 65vw;
-
-    @media (min-width: 530px) {
-        width: 25vw;
-    }
-}
 
 .museum h2{
     width: 65vw;
+    margin: 0;
 
     @media (min-width: 530px) {
         width: 17vw;
-    }
-}
-
-.museum h2:hover{
-    width: 65vw;
-
-    @media (min-width: 530px) {
-        width: 25vw;
     }
 }
 
 .nmq{
     z-index: 0;
+    transform: translateX(0%);
+    
+}
+
+.nmq:hover{
+    transform: translateX(-5%);
     
 }
 
 .mia{
-    z-index: 1;
+    z-index: 2;
+    transform: translateX(-10%);
+}
+
+.mia:hover{
+    transform: translateX(-15%);
 }
 
 .mathaf{
-    z-index: 2;
+    z-index: 3;
+    transform: translateX(-20%);
 }
+
+.mathaf:hover{
+    transform: translateX(-25%);
+}
+
 
 .olympic{
-    z-index: 3;
+    z-index: 4;
+    transform: translateX(-30%);
 }
 
+.olympic:hover{
+    transform: translateX(-35%);
+}
+
+.see-more{
+    z-index: 8;
+    transform: translateX(-40%);
+}
 
