@@ -101,7 +101,7 @@
 
 
 .object img{
-
+    border-radius: 2.5%;
     width: 35vw;
     box-shadow: var(--black);
     
@@ -229,10 +229,9 @@
     position: relative;
 
     @media (min-width: 530px) {
-        display: flex; 
-        list-style: none;
         justify-content: center; 
         flex-direction: row;
+        align-items: stretch;
     }
 }
 
