@@ -1,31 +1,42 @@
-> _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
+
 
 # Titel
 <!-- Geef je project een titel en schrijf in één zin wat het is -->
 
 ## Inhoudsopgave
 
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
+  * [description](#Description)
+  * [Installation](#installation)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
-## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+## Description
+What have I done so far?
+* Created a stylesheet
+* I have fetched data from the given API, and rendered the data into the html file. The data I've used are the object images and titles.
+The goal was to make a homepage showing off the art and a detail page for each artwork. To show off all the art on the homepage I have looped
+the object. 
+* On the detail page I have also used the image and title of the object. I've also added a [the following](https://github.com/Tindyy/server-side-rendering-server-side-website/blob/5f7dda844ec5e80430b2f30a2e72044bd664d9d1/views/artObjectDetail.liquid#L8-L12) for when a field is empty to enter 
+the following in the empty field.:
+* Lastly I've tried to match the css styling to the [Qatar museum](https://qm.org.qa/en/) website, figma design and [previous designs](https://github.com/fdnd-agency/fabrique/tree/design-challenge?tab=readme-ov-file#studentenwerk)
 
-## Gebruik
-<!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
+```
 
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+{% if art.image %}
+ null
+ {% else %}
+ Sorry Image not found
+ {% endif %}
 
-## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+ ```
 
+      
+
+## Installation
+To run the project: `npm start`
+To terminate batch job: `^c` 
+
+GSAP: `npm install gsap`
 ## Bronnen
 
 ## Licentie
